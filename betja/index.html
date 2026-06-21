@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a0e08">
+<meta name="description" content="Página oficial para descarregar e instalar a app BetJá para Android. Apostas desportivas, apostas ao vivo e casino. Segura, assinada e grátis.">
+<title>Descarregar BetJá — App Oficial para Android</title>
+<style>
+  :root{
+    --bg:#0a0e08;
+    --base:#0c1109;
+    --card:#14180f;
+    --card2:#1b2114;
+    --line:rgba(189,238,26,.10);
+    --line2:rgba(189,238,26,.22);
+    --linew:rgba(255,255,255,.10);
+    --txt:#f3f8ea;
+    --muted:#aab79a;
+    --muted2:#86936f;
+    --lime:#BDEE1A;
+    --lime-d:#a4d010;
+    --lime-dark:#1f2a05;
+    --ok:#BDEE1A;
+    --radius:18px;
+    --radius-sm:12px;
+    --shadow:0 18px 44px -18px rgba(0,0,0,.85);
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:
+      radial-gradient(1100px 560px at 50% -220px, #1d2a08 0%, rgba(10,14,8,0) 62%),
+      var(--bg);
+    color:var(--txt);
+    font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .wrap{max-width:640px;margin:0 auto;padding:0 16px 56px;}
+  a{color:inherit}
+  h1,h2,h3{line-height:1.15;margin:0;letter-spacing:-0.02em}
+  p{margin:0}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+
+  /* ===== TOP BAR ===== */
+  .topbar{
+    display:flex;align-items:center;gap:10px;
+    max-width:640px;margin:0 auto;padding:14px 16px 4px;
+  }
+  .topbar .name{font-weight:800;font-size:16px;letter-spacing:-.01em;color:var(--txt)}
+  .topbar .name .ja{color:var(--lime);font-weight:800}
+  .topbar .name .dot{color:var(--muted2);font-weight:600}
+  .trust-chip{
+    margin-left:auto;display:inline-flex;align-items:center;gap:6px;
+    font-size:12px;font-weight:700;color:var(--ok);
+    background:rgba(189,238,26,.10);border:1px solid rgba(189,238,26,.32);
+    padding:6px 11px;border-radius:999px;white-space:nowrap;
+  }
+  .trust-chip svg{flex:0 0 auto}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    border-radius:24px;
+    margin-top:10px;
+    padding:32px 20px 36px;
+    text-align:center;
+    background:
+      radial-gradient(640px 340px at 50% -10%, rgba(189,238,26,.30) 0%, rgba(189,238,26,0) 62%),
+      linear-gradient(165deg,#18210d 0%, #0c1108 72%);
+    box-shadow:var(--shadow);
+    border:1px solid rgba(189,238,26,.14);
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,0) 30%);
+  }
+  .hero .brandmark{
+    position:relative;z-index:1;
+    display:block;width:min(72%,300px);height:auto;margin:0 auto 18px;
+    filter:drop-shadow(0 8px 26px rgba(189,238,26,.25));
+  }
+  .hero p.sub{position:relative;z-index:1;color:var(--muted);font-size:16px;max-width:30ch;margin:0 auto 22px}
+  .hero p.sub b{color:var(--txt);font-weight:700}
+
+  .feats{position:relative;z-index:1;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:4px}
+  .feat{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(189,238,26,.06);
+    border:1px solid var(--line2);
+    padding:9px 13px;border-radius:999px;
+    font-size:13px;font-weight:600;color:var(--txt);
+  }
+  .feat svg{flex:none}
+
+  /* ===== PRIMARY DOWNLOAD ===== */
+  .download{
+    margin-top:22px;
+    text-align:center;
+  }
+  .meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center;margin:0 0 16px}
+  .chip{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:12.5px;font-weight:600;color:var(--muted);
+    background:rgba(189,238,26,.05);border:1px solid var(--line);
+    padding:6px 11px;border-radius:999px;
+  }
+  .chip svg{flex:none}
+  .chip b{color:var(--lime);font-weight:700}
+
+  .dl{
+    display:flex;align-items:center;justify-content:center;gap:11px;
+    width:100%;min-height:60px;
+    padding:16px 18px;
+    border-radius:16px;
+    font-size:18px;font-weight:800;letter-spacing:-.01em;
+    text-decoration:none;color:#0a0e08;
+    border:0;cursor:pointer;
+    background:linear-gradient(180deg,#cdf83a,#BDEE1A);
+    box-shadow:0 12px 26px -10px rgba(189,238,26,.75);
+    transition:transform .08s ease, filter .15s ease;
+  }
+  .dl:active{transform:translateY(1px) scale(.995)}
+  .dl:hover{filter:brightness(1.05)}
+  .dl:focus-visible{outline:3px solid #fff;outline-offset:3px}
+  .dl-sub{
+    text-align:center;margin-top:11px;font-size:12.5px;color:var(--muted2);
+    display:flex;align-items:center;justify-content:center;gap:6px;
+  }
+  .dl-sub svg{color:var(--ok);flex:none}
+
+  /* ===== SECTION LABEL ===== */
+  .section-label{display:flex;align-items:center;gap:12px;margin:38px 4px 14px}
+  .section-label h2{font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .section-label .rule{flex:1;height:1px;background:var(--line)}
+
+  /* ===== INSTALL ===== */
+  .install-intro{color:var(--muted);font-size:14.5px;margin:0 4px 16px;max-width:54ch}
+
+  ol.steps{list-style:none;display:grid;gap:14px;margin:0;padding:0}
+  ol.steps li.step{
+    display:flex;gap:14px;
+    background:linear-gradient(180deg,var(--card2),var(--card));
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:18px 16px;
+  }
+  .step .num{
+    flex:0 0 auto;width:44px;height:44px;border-radius:12px;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:18px;color:#0a0e08;
+    background:linear-gradient(150deg,#d4f84c,#BDEE1A);
+  }
+  .step .body{flex:1;min-width:0}
+  .step .st-head{display:flex;align-items:center;gap:9px;margin-bottom:4px}
+  .step .st-icon{width:22px;height:22px;color:var(--lime);flex:0 0 auto}
+  .step h3{font-size:17px;line-height:1.3}
+  .step p{color:var(--muted);font-size:14.5px;margin-top:4px}
+  .step p b{color:var(--txt);font-weight:650}
+  .step .quote{
+    display:inline-flex;align-items:flex-start;gap:7px;
+    margin-top:11px;font-size:13px;color:var(--txt);
+    background:rgba(189,238,26,.05);border:1px solid var(--line2);
+    padding:9px 12px;border-radius:10px;line-height:1.45;
+  }
+  .step .quote b{color:var(--lime);font-weight:700}
+  .step .quote svg{width:14px;height:14px;color:var(--ok);flex:0 0 auto;margin-top:2px}
+
+  .reassure{
+    display:flex;gap:12px;align-items:flex-start;
+    margin-top:16px;
+    background:rgba(189,238,26,.07);
+    border:1px solid rgba(189,238,26,.28);
+    border-radius:var(--radius);
+    padding:16px;
+  }
+  .reassure svg{width:24px;height:24px;color:var(--lime);flex:0 0 auto;margin-top:1px}
+  .reassure h3{font-size:15.5px;margin-bottom:4px}
+  .reassure p{color:#dcefc2;font-size:14px}
+
+  .final-line{text-align:center;margin-top:18px;color:var(--muted);font-size:14.5px}
+  .final-line b{color:var(--txt);font-weight:750}
+
+  /* ===== SAFETY STRIP ===== */
+  .safety{margin-top:34px;display:grid;gap:10px}
+  .safety .row{
+    display:flex;align-items:flex-start;gap:12px;
+    background:var(--card);border:1px solid var(--line);
+    border-radius:var(--radius-sm);padding:14px;
+  }
+  .safety .row svg{width:22px;height:22px;flex:0 0 auto;color:var(--lime);margin-top:1px}
+  .safety .row b{font-size:14.5px}
+  .safety .row p{color:var(--muted);font-size:13px;margin-top:2px}
+
+  /* ===== GET-AGAIN SHORTCUT ===== */
+  .backtop{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0 0}
+  .ghost{
+    flex:1;min-width:150px;min-height:48px;
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    text-decoration:none;font-weight:700;font-size:14.5px;color:var(--txt);
+    background:rgba(189,238,26,.06);border:1px solid var(--line2);border-radius:12px;padding:12px;
+    transition:filter .15s ease, transform .08s ease;
+  }
+  .ghost:active{transform:translateY(1px)}
+  .ghost:hover{filter:brightness(1.15)}
+  .ghost:focus-visible{outline:3px solid #fff;outline-offset:2px}
+  .ghost .d{width:8px;height:8px;border-radius:50%;flex:none;background:var(--lime)}
+
+  /* ===== FOOTER ===== */
+  footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);text-align:center;color:var(--muted2);font-size:13px}
+  footer .signed{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(189,238,26,.05);border:1px solid var(--line);
+    border-radius:999px;padding:8px 14px;margin-bottom:14px;
+    font-size:12.5px;font-weight:600;color:var(--muted);
+  }
+  footer .signed svg{flex:none;color:var(--ok)}
+  footer .copy{font-weight:700;color:var(--txt);font-size:13.5px;margin:6px 0}
+  footer .fineprint{margin-top:8px;font-size:12px;max-width:46ch;margin-left:auto;margin-right:auto}
+</style>
+</head>
+<body>
+
+  <header class="topbar">
+    <span class="name">Bet<span class="ja">Já</span> <span class="dot">·</span> Angola</span>
+    <span class="trust-chip">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V5z"/><path d="m9 12 2 2 4-4"/></svg>
+      Oficial &amp; assinada
+    </span>
+  </header>
+
+  <main class="wrap">
+
+    <section class="hero">
+      <img class="brandmark" src="../logos/betja.png" alt="BetJá" width="300" height="120">
+      <p class="sub">Apostas desportivas e casino — <b>joga e ganha</b>. Descarrega grátis para Android.</p>
+
+      <div class="feats" role="list" aria-label="Funcionalidades principais">
+        <span class="feat" role="listitem">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#BDEE1A" stroke-width="2"/><circle cx="12" cy="12" r="3" fill="#BDEE1A"/></svg>
+          Apostas ao vivo
+        </span>
+        <span class="feat" role="listitem">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2.5" stroke="#BDEE1A" stroke-width="2"/><circle cx="8.5" cy="12" r="1.6" fill="#BDEE1A"/><circle cx="15.5" cy="12" r="1.6" fill="#BDEE1A"/></svg>
+          Casino
+        </span>
+        <span class="feat" role="listitem">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 3L5 13h5l-1 8 8-10h-5l1-8z" fill="#BDEE1A"/></svg>
+          Pagamentos rápidos
+        </span>
+      </div>
+    </section>
+
+    <!-- PRIMARY DOWNLOAD -->
+    <section class="download" aria-labelledby="dl-title">
+      <h2 id="dl-title" class="sr-only">Descarregar a app BetJá</h2>
+      <div class="meta">
+        <span class="chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4l7 16 7-16" stroke="#aab79a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Android
+        </span>
+        <span class="chip">Grátis</span>
+        <span class="chip"><b>v1.0.0</b></span>
+      </div>
+      <a class="dl" href="https://github.com/luche1984/tushinde-apps/releases/download/v1.0.0/Betja-v1.0.0.apk" aria-label="Descarregar BetJá para Android, versão 1.0.0">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v11m0 0l-4-4m4 4l4-4M5 19h14" stroke="#0a0e08" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Descarregar para Android
+      </a>
+      <p class="dl-sub">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        APK verificado &amp; assinado · v1.0.0
+      </p>
+    </section>
+
+    <!-- INSTALL -->
+    <section aria-labelledby="install-title">
+      <div class="section-label">
+        <h2>Como instalar</h2>
+        <div class="rule" aria-hidden="true"></div>
+      </div>
+      <h3 id="install-title" style="font-size:21px;font-weight:850;margin:0 4px 8px">3 passos simples — em menos de um minuto</h3>
+      <p class="install-intro">O Android mostra alguns avisos extra para apps descarregadas fora da Play Store. É completamente normal e seguro — basta seguir os passos abaixo.</p>
+
+      <ol class="steps">
+
+        <li class="step">
+          <div class="num" aria-hidden="true">1</div>
+          <div class="body">
+            <div class="st-head">
+              <svg class="st-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>
+              <h3>Toque em Descarregar</h3>
+            </div>
+            <p>Carregue no botão verde-lima acima. O navegador pode avisar que o ficheiro “pode danificar o dispositivo” — é uma mensagem padrão para qualquer app descarregada fora da Play Store.</p>
+            <span class="quote">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              <span>Toque em <b>Descarregar mesmo assim</b> ou <b>OK</b> — é a nossa app oficial e assinada, é seguro mantê-la.</span>
+            </span>
+          </div>
+        </li>
+
+        <li class="step">
+          <div class="num" aria-hidden="true">2</div>
+          <div class="body">
+            <div class="st-head">
+              <svg class="st-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h6l2 2h8v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M12 11v5"/><path d="m10 14 2 2 2-2"/></svg>
+              <h3>Abra o ficheiro</h3>
+            </div>
+            <p>Quando o download terminar, toque no ficheiro na barra de notificações. Também o pode encontrar mais tarde na pasta <b>Transferências</b> ou na app Ficheiros do telemóvel — é o <b>.apk</b> que acabou de guardar.</p>
+          </div>
+        </li>
+
+        <li class="step">
+          <div class="num" aria-hidden="true">3</div>
+          <div class="body">
+            <div class="st-head">
+              <svg class="st-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="m9 12 2 2 4-4"/></svg>
+              <h3>Permita &amp; Instale</h3>
+            </div>
+            <p>Se o telemóvel pedir, permita que o navegador “instale apps desconhecidas” — só precisa de o fazer uma vez. Depois toque em <b>Instalar</b>.</p>
+            <span class="quote">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              <span>Aparece o aviso <b>Play Protect</b>? Toque em <b>Mais detalhes</b> e depois em <b>Instalar mesmo assim</b>.</span>
+            </span>
+          </div>
+        </li>
+
+      </ol>
+
+      <div class="reassure" role="note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V5z"/><path d="m9 12 2 2 4-4"/></svg>
+        <div>
+          <h3>Porquê estes passos?</h3>
+          <p>A BetJá ainda não está na Google Play Store, por isso o Android mostra avisos extra para downloads diretos. É completamente normal e seguro — a app é criada e oficialmente assinada pela nossa equipa.</p>
+        </div>
+      </div>
+
+      <p class="final-line">É tudo. <b>Abra a app e inicie sessão</b> — está pronto para jogar.</p>
+    </section>
+
+    <!-- SAFETY -->
+    <section class="safety" aria-label="Porque pode confiar neste download">
+      <div class="row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V5z"/><path d="m9 12 2 2 4-4"/></svg>
+        <div><b>Oficialmente assinada</b><p>Cada versão é assinada com a nossa chave de programador — é assim que o Android confirma que vem mesmo de nós.</p></div>
+      </div>
+      <div class="row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <div><b>Direta &amp; atualizada</b><p>Recebe sempre a versão mais recente, diretamente de nós — sem lojas terceiras nem cópias.</p></div>
+      </div>
+      <div class="row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v6m0 8v6M2 12h6m8 0h6"/><circle cx="12" cy="12" r="3.2"/></svg>
+        <div><b>Feita pela nossa equipa</b><p>A BetJá é criada e mantida por nós. Os avisos extra do Android são normais para downloads diretos.</p></div>
+      </div>
+    </section>
+
+    <!-- GET-AGAIN SHORTCUT -->
+    <div class="backtop">
+      <a class="ghost" href="https://github.com/luche1984/tushinde-apps/releases/download/v1.0.0/Betja-v1.0.0.apk" aria-label="Descarregar BetJá para Android, versão 1.0.0">
+        <span class="d" aria-hidden="true"></span> Descarregar BetJá
+      </a>
+    </div>
+
+    <footer>
+      <div class="signed">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V5z"/><path d="m9 12 2 2 4-4"/></svg>
+        App oficial e digitalmente assinada
+      </div>
+      <p class="copy">© <span id="yr">2026</span> BetJá · +18 · Jogue com responsabilidade.</p>
+      <p class="fineprint">As apostas podem causar dependência. Aposte apenas o que pode perder. Reservado a maiores de 18 anos.</p>
+    </footer>
+
+  </main>
+
+  <script>
+    // Mantém o ano de copyright atualizado; a página funciona totalmente sem JS.
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
